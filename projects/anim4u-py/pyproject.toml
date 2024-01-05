@@ -2,9 +2,12 @@
 name = "anim4u-py"
 version = "0.0.0-beta"
 description = "A Python CLI for download anime"
+authors = ["Bakare Abiola <iamstarcode@gmail.com>"]
+
 
 [tool.poetry.dependencies]
-iamstarcode-anim4u_py = "*"
+python = "^3.6"
+4ulib_py = { path = "../../libs/4ulib_py", develop = false }
 
 
 [build-system]
