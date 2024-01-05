@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "anim4u-py"
+version = "0.1.0"
+description = ""
+authors = ["Bakare Abiola <iamstarcode@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
