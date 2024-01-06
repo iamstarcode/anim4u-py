@@ -33,7 +33,7 @@ description = ""
 optional = false
 python-versions = ">=3.7"
 files = []
-develop = false
+develop = true
 
 [package.source]
 type = "directory"
@@ -193,4 +193,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.7"
-content-hash = "1fe8d95528235d50286c177d3cd0cf14eddffed145049baaa3dab0d8f6913169"
+content-hash = "4445de779ded503406cb6b2b750b6af31fd9c264d03eb2a74b9be18921aa1d10"

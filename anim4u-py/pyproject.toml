@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "anim4u-py"
-version = "0.0.0-beta"
+version = "0.0.0-beta-1"
 description = "A Python CLI for download anime"
 authors = ["Bakare Abiola <iamstarcode@gmail.com>"]
 
