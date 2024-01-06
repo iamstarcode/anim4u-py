@@ -18,6 +18,9 @@ def download(
     if d:
         print(f"Options: {Options}")
 
+    if provider == "animepahe":
+        print("Animepahe")
+
 
 @app.command()
 def clear(username: str):
