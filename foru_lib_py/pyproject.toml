@@ -1,12 +1,13 @@
 [tool.poetry]
-name = "media4u-py"
+name = "foru_lib_py"
 version = "0.1.0"
 description = ""
 authors = ["Bakare Abiola <iamstarcode@gmail.com>"]
 readme = "README.md"
+packages = [{ include = "foru_lib_py"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.7"
 
 
 [build-system]
