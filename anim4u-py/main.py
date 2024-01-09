@@ -14,12 +14,12 @@ def download(
     f: Annotated[bool, typer.Option()] = False,
 ):
     [provider, que] = cli.provider_seperated(query)
-    Options = {"provider": provider, "query": que, "quality": q, "force": f}
+    options = {"provider": provider, "query": que, "quality": q, "force": f}
     if d:
-        print(f"Options: {Options}")
+        print(f"Options: {options}")
 
     if provider == "animepahe":
-        print("Animepahe")
+        print("Animepahe", options["quality"])
 
 
 @app.command()

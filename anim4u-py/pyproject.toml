@@ -14,7 +14,6 @@ watchfiles = "^0.21.0"
 [tool.poe.tasks]
 dev = "watchfiles 'python main.py download 'animepahe:jojo' --f --d --q 480'"
 
-
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"

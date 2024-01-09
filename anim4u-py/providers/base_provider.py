@@ -1,3 +1,4 @@
 class BaseProvider:
-    def search():
-        print(2 * 2)
+    def __init__(self, options) -> None:
+        self.options = options
+        # self.query
