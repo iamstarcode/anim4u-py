@@ -19,7 +19,7 @@ def download(
         print(f"Options: {Options}")
 
     if provider == "animepahe":
-        print("Animepahe")
+        print("Animepahe X2")
 
 
 @app.command()
