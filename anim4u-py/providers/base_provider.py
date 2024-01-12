@@ -4,3 +4,7 @@ class BaseProvider:
         self.query = query
         self.provider = provider
         self.searchPath = search_path
+
+    def run(self):
+        # implent getting media.
+        print("Searching media")
