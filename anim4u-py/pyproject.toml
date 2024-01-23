@@ -8,8 +8,9 @@ authors = ["Bakare Abiola <iamstarcode@gmail.com>"]
 [tool.poetry.dependencies]
 python = ">=3.8"
 typer = {extras = ["all"], version = "^0.9.0"}
-foru-lib-py = {path = "../foru_lib_py", develop = true}
+foru-lib-py = {path = "../foru_lib_py"}
 watchfiles = "^0.21.0"
+consumet-py = {path = "../consumet_py"}
 
 [tool.poe.tasks]
 dev = "watchfiles 'python main.py download 'animepahe:jojo' --f --d --q 480'"

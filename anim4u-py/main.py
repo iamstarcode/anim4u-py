@@ -3,6 +3,9 @@ from typing_extensions import Annotated
 from foru_lib_py import cli
 from typing_extensions import Annotated
 
+from consumet_py.consumet_py import AnimepaheProvier
+from consumet_py.anime import A
+
 app = typer.Typer()
 
 

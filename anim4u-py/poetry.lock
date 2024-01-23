@@ -48,6 +48,19 @@ files = [
 ]
 
 [[package]]
+name = "consumet-py"
+version = "0.0.1-beta1"
+description = ""
+optional = false
+python-versions = ">=3.7"
+files = []
+develop = false
+
+[package.source]
+type = "directory"
+url = "../consumet_py"
+
+[[package]]
 name = "exceptiongroup"
 version = "1.2.0"
 description = "Backport of PEP 654 (exception groups)"
@@ -68,7 +81,7 @@ description = ""
 optional = false
 python-versions = ">=3.7"
 files = []
-develop = true
+develop = false
 
 [package.source]
 type = "directory"
@@ -301,4 +314,4 @@ anyio = ">=3.0.0"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8"
-content-hash = "999cdf7078b6e31f7e0b8ffaf302dc9850ab194d0083501b17e2708d74636f2a"
+content-hash = "c8a6683cdf1d56f09854f4eb13ff84e38900681f2fb5e781fbe8ceb7e3d8360c"
