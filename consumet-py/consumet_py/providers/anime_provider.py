@@ -1,14 +1,18 @@
+from typing import Any, Iterable
 from .base_provider import BaseProvider
 from abc import ABC, abstractmethod
 
-""" class IAnimeInfo:
-    # Define the structure of anime information here
+
+class IAnimeInfo:
+    pass
+
 
 class ISource:
-    # Define the structure of episode sources here
+    pass
+
 
 class IEpisodeServer:
-    # Define the structure of episode servers here """
+    pass
 
 
 class AnimeProvider(BaseProvider):

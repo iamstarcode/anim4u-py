@@ -58,7 +58,7 @@ develop = false
 
 [package.source]
 type = "directory"
-url = "../consumet_py"
+url = "../consumet-py"
 
 [[package]]
 name = "exceptiongroup"
@@ -314,4 +314,4 @@ anyio = ">=3.0.0"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8"
-content-hash = "c8a6683cdf1d56f09854f4eb13ff84e38900681f2fb5e781fbe8ceb7e3d8360c"
+content-hash = "53f6edb52a292761516a69d390de8b129ade40b3fec7bbdefbfc350b4f0b655b"

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "consumet_py"
+name = "consumet-py"
 version = "0.0.1-beta1"
 description = ""
 authors = ["Bakare Abiola <iamstarcode@gmail.com>"]
@@ -9,6 +9,7 @@ packages = [{ include = "consumet_py"}]
 
 [tool.poetry.dependencies]
 python = ">=3.7"
+pydantic = "^2.5.3"
 
 
 [build-system]
