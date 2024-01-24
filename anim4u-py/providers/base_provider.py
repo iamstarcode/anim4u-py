@@ -1,7 +1,7 @@
 from typing import Any
 from pydantic import BaseModel
 
-from consumet_py.providers.base_provider import BaseProvider
+from consumet_py.providers import BaseProvider as Provider
 
 
 class Options(BaseModel):
@@ -11,11 +11,12 @@ class Options(BaseModel):
 
 
 class BaseProvider:
-    def __init__(self, options: Options, provider: BaseProvider) -> None:
+    def __init__(self, options: Options, provider: Provider) -> None:
         self.options = options
         self.provider = provider
 
-        # self.searchPath = search_path
+        self.searchPath = "anim4u/" + provider.name.lower()
+        # print(self.searchPath)
 
     def run(self):
         # implent getting media.
