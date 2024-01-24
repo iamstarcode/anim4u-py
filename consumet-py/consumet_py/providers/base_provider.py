@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List
+from typing import List, Any
 
 
 class SearchResult:
@@ -28,7 +28,7 @@ class BaseProvider(ABC):
         self.baseURL = baseURL
 
     @abstractmethod
-    async def search(self, query: str) -> List[SearchResult]:
+    async def search(self, query: str) -> Any:
         """
         Searches for anime or movies based on the given query.
 

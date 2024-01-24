@@ -13,7 +13,7 @@ class Trailer(BaseModel):
     embed: bool
 
 
-class IAnimeResult(BaseModel):
+class AnimeResult(BaseModel):
     # Define fields from IAnimeResult if available
     # ...
     pass
@@ -25,13 +25,13 @@ class SubOrSub(BaseModel):
     pass
 
 
-class IAnimeEpisode(BaseModel):
+class AnimeEpisode(BaseModel):
     # Define IAnimeEpisode if needed
     # ...
     pass
 
 
-class IAnimeInfo(BaseModel):
+class AnimeInfo(BaseModel):
     malId: Union[int, str]
     genres: List[str]
     description: str
@@ -49,8 +49,13 @@ class IAnimeInfo(BaseModel):
     color: str
     cover: str
     trailer: Trailer
-    episodes: List[IAnimeEpisode]
+    episodes: List[AnimeEpisode]
     startDate: FuzzyDate
     endDate: FuzzyDate
-    recommendations: List[IAnimeResult]
-    relations: List[IAnimeResult]
+    recommendations: List[AnimeResult]
+    relations: List[AnimeResult]
+
+
+class EpisodeServer(BaseModel):
+    name: str
+    url: str

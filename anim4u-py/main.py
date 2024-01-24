@@ -16,7 +16,7 @@ def download(
     f: Annotated[bool, typer.Option()] = False,
 ):
     [provider, que] = cli.provider_seperated(query)
-    # animepahe_provider = Anime.AnimeProvider()
+    ### animepahe_provider = Anime.AnimeProvider()
     print(Anime.AnimepaheProvier())
     options = {"provider": provider, "query": que, "quality": q, "force": f}
     if d:
