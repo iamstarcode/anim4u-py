@@ -3,6 +3,10 @@ from typing_extensions import Annotated
 from foru_lib_py import cli
 from typing_extensions import Annotated
 
+from providers.animepahe_provider import AnimepaheProvider
+from providers.base_provider import Options
+
+
 from consumet_py import Anime
 
 app = typer.Typer()
@@ -16,14 +20,18 @@ def download(
     f: Annotated[bool, typer.Option()] = False,
 ):
     [provider, que] = cli.provider_seperated(query)
-    ### animepahe_provider = Anime.AnimeProvider()
-    print(Anime.AnimepaheProvier())
+    #### animepahe_provider = Anime.AnimeProvider()
+
     options = {"provider": provider, "query": que, "quality": q, "force": f}
     if d:
         print(f"Options: {options}")
 
     if provider == "animepahe":
-        print("Animepahe", options["quality"])
+        provider = AnimepaheProvider(options=options, provider=Anime.AnimepaheProvier())
+        provider.run()
+
+    elif provider == "gogoanime":
+        provider = AnimepaheProvider(options=options, provider=Anime.AnimepaheProvier())
 
 
 @app.command()
