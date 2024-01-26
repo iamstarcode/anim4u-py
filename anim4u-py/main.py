@@ -30,7 +30,8 @@ def download(
         provider.run()
 
     elif provider == "gogoanime":
-        provider = AnimepaheProvider(options=options, provider=Anime.AnimepaheProvier())
+        # provider = AnimepaheProvider(options=options, provider=Anime.AnimepaheProvier())
+        pass
 
 
 @app.command()

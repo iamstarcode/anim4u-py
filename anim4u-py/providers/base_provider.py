@@ -3,6 +3,8 @@ from pydantic import BaseModel
 
 from consumet_py.providers import BaseProvider as Provider
 
+from rich.progress import Progress, SpinnerColumn, TextColumn
+
 
 class Options(BaseModel):
     query: str
@@ -20,7 +22,13 @@ class BaseProvider:
 
     def run(self):
         # implent getting media.
-        print("Searching media")
+        print("Searching media from base")
 
-    """def __init__(self, options):
-    super().__init__(options)"""
+    def get_anime(self):
+        if self.options.force is True:
+            return self.fetch_anime()
+            pass
+        pass
+
+    def fetch_anime(self):
+        pass
