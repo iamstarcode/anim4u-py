@@ -19,7 +19,6 @@ class BaseProvider:
     def __init__(self, options: Options, provider: Provider) -> None:
         self.options = options
         self.provider = provider
-
         self.searchPath = "anim4u/" + provider.name.lower()
         # print(self.searchPath)
 
@@ -36,10 +35,13 @@ class BaseProvider:
 
     async def fetch_anime(self):
         provider_color = ""
+
         if self.provider.name == "Animepahe":
             provider_color = f"[deep_pink1]Animepahe[/deep_pink1]"
 
-        # print(f'Searching {self.options["query"]} from {provider_color}')
+        if self.provider.name == "Anitaku":
+            provider_color = f"[green]Anitaku[/green]"
+
         description = (
             f'Searching [yellow]{self.options["query"]}[/yellow] from {provider_color}'
         )
@@ -50,8 +52,8 @@ class BaseProvider:
             transient=True,
         ) as progress:
             progress.add_task(description, total=None)
-            # n,m,,,
+
             anime = await self.provider.search(self.options["query"])
-            print(anime)
+            print("done")
             # time.sleep(5)
         pass
