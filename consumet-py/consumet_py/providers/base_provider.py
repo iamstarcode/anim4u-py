@@ -23,9 +23,9 @@ class BaseProvider(ABC):
     baseURL: str
     # is_nfsw
 
-    def __init__(self, name, baseURL) -> None:
+    def __init__(self, name, base_url) -> None:
         self.name = name
-        self.baseURL = baseURL
+        self.base_url = base_url
 
     @abstractmethod
     async def search(self, query: str) -> Any:

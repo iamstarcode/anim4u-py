@@ -23,18 +23,18 @@ class BaseProvider:
         self.searchPath = "anim4u/" + provider.name.lower()
         # print(self.searchPath)
 
-    def run(self):
+    async def run(self):
         # implent getting media.
-        anime = self.get_anime()
+        anime = await self.get_anime()
         # print("Searching media from base")
 
-    def get_anime(self):
+    async def get_anime(self):
         if self.options["force"] is True:
-            return self.fetch_anime()
+            return await self.fetch_anime()
             pass
         pass
 
-    def fetch_anime(self):
+    async def fetch_anime(self):
         provider_color = ""
         if self.provider.name == "Animepahe":
             provider_color = f"[deep_pink1]Animepahe[/deep_pink1]"
@@ -50,6 +50,8 @@ class BaseProvider:
             transient=True,
         ) as progress:
             progress.add_task(description, total=None)
-            # todo implement search with consumet
-            time.sleep(5)
+            # n,m,,,
+            anime = await self.provider.search(self.options["query"])
+            print(anime)
+            # time.sleep(5)
         pass

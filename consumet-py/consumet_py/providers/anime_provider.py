@@ -7,8 +7,8 @@ from ..models import Source
 
 
 class AnimeProvider(BaseProvider):
-    def __init__(self, name, baseURL) -> None:
-        super().__init__(name, baseURL)
+    def __init__(self, name, base_url) -> None:
+        super().__init__(name, base_url)
 
     """Abstract class for parsing anime information from various providers."""
 

@@ -11,6 +11,9 @@ typer = {extras = ["all"], version = "^0.9.0"}
 foru-lib-py = {path = "../foru_lib_py"}
 watchfiles = "^0.21.0"
 consumet-py = {path = "../consumet-py", develop = true}
+requests = "^2.31.0"
+httpx = "^0.26.0"
+anyio = "^4.2.0"
 
 [tool.poe.tasks]
 dev = "watchfiles 'python main.py download 'animepahe:jojo' --f --d --q 480'"

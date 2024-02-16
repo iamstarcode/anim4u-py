@@ -3,17 +3,33 @@ from typing_extensions import Annotated
 from foru_lib_py import cli
 from typing_extensions import Annotated
 
+from asyncio import run as aiorun
+
 from providers.animepahe_provider import AnimepaheProvider
 from providers.base_provider import Options
 
+from functools import wraps
+import anyio
 
 from consumet_py import Anime
 
 app = typer.Typer()
 
 
+def run_async(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        async def coro_wrapper():
+            return await func(*args, **kwargs)
+
+        return anyio.run(coro_wrapper)
+
+    return wrapper
+
+
 @app.command()
-def download(
+@run_async
+async def download(
     query: str,
     q: Annotated[int, typer.Option()] = None,
     d: Annotated[bool, typer.Option()] = False,
@@ -27,7 +43,7 @@ def download(
 
     if provider == "animepahe":
         provider = AnimepaheProvider(options=options, provider=Anime.AnimepaheProvier())
-        provider.run()
+        await provider.run()
 
     elif provider == "gogoanime":
         # provider = AnimepaheProvider(options=options, provider=Anime.AnimepaheProvier())
