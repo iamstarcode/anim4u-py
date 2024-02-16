@@ -12,25 +12,33 @@ from ...providers.anime_provider import AnimeProvider
 import httpx
 
 
-class AnimepaheProvier(AnimeProvider):
+class AnitakuProvider(AnimeProvider):
     def __init__(self) -> None:
-        super().__init__("Animepahe", base_url="https://animepahe.ru")
+        super().__init__("Anitaku", base_url="https://anitaku.to/")
 
     async def search(self, query: str) -> Search[AnimeResult]:
         try:
             HEADERS = {
-                "User-Agent": "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
+                "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Charset": "ISO-8859-1,utf-8;q=0.7,*;q=0.3",
+                "Accept-Encoding": "none",
+                "Accept-Language": "en-US,en;q=0.8",
+                "Connection": "keep-alive",
             }
 
+            # f"{self.base_url}/api?m=search&q={query}",
+            # "https://anitaku.to/search.html?keyword=juju"
             async with httpx.AsyncClient() as client:
                 response = await client.get(
-                    f"{self.base_url}/api?m=search&q={query}",
+                    f"https://anitaku.to/search.html?keyword=juju",
                     follow_redirects=True,
                     headers=HEADERS,
                 )
                 # response.raise_for_status()  # Raise an error for bad responses (non-2xx)
-                print(response.json())
-                data = await response.json()
+
+                data = response.text
+                print(data)
 
                 """ results = {
                     "results": [

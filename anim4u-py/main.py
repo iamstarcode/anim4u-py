@@ -6,6 +6,9 @@ from typing_extensions import Annotated
 from asyncio import run as aiorun
 
 from providers.animepahe_provider import AnimepaheProvider
+
+from providers.anitaku_provider import AnitakuProvider
+
 from providers.base_provider import Options
 
 from functools import wraps
@@ -46,7 +49,8 @@ async def download(
         await provider.run()
 
     elif provider == "gogoanime":
-        # provider = AnimepaheProvider(options=options, provider=Anime.AnimepaheProvier())
+        provider = AnitakuProvider(options=options, provider=Anime.AnitakuProvider())
+        await provider.run()
         pass
 
 

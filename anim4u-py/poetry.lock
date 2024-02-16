@@ -178,7 +178,7 @@ description = ""
 optional = false
 python-versions = ">=3.7"
 files = []
-develop = true
+develop = false
 
 [package.dependencies]
 pydantic = "^2.5.3"
@@ -670,4 +670,4 @@ anyio = ">=3.0.0"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8"
-content-hash = "135e8de04720b62f674ea52f2d52e112bc36038428ba646ccecacc06061592c2"
+content-hash = "63f6304b1fb58107d35f366d77a2876b1a754f9a1299074daf38c80ec57d1ff6"
