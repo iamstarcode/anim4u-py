@@ -9,8 +9,6 @@ from ...models import Search, Source
 
 from ...providers.anime_provider import AnimeProvider
 
-import httpx
-
 
 class AnimepaheProvier(AnimeProvider):
     def __init__(self) -> None:
